@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://pythonhosted.org/emonoda/emdiff/">
+      
+      
+      
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.4">
+    
+    
+      
+        <title>emdiff - сравнение торрент-файлов - emonoda! documentation</title>
+      
+    
+    
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-b1a1975878.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Hack">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Hack","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="https://pythonhosted.org/emonoda/" title="emonoda! documentation" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Команды
+                </span>
+              
+            
+            emdiff - сравнение торрент-файлов
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/mdevaev/emonoda" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      mdevaev/emonoda
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Emonoda -- 得物だ" class="md-tabs__link">
+        Emonoda -- 得物だ
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../clients/" title="Базовая настройка" class="md-tabs__link">
+          Базовая настройка
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../emupdate/" title="Команды" class="md-tabs__link md-tabs__link--active">
+          Команды
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    emonoda! documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/mdevaev/emonoda" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      mdevaev/emonoda
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Emonoda -- 得物だ" class="md-nav__link">
+      Emonoda -- 得物だ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="Базовая настройка" class="md-nav__link">
+      Базовая настройка
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Базовая настройка
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Базовая настройка
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clients/" title="Интеграция с торрент-клиентом" class="md-nav__link">
+      Интеграция с торрент-клиентом
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trackers/" title="Настройка трекеров для обновления торрентов" class="md-nav__link">
+      Настройка трекеров для обновления торрентов
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../confetti/" title="Настройка оповещений об обновлениях" class="md-nav__link">
+      Настройка оповещений об обновлениях
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Команды
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Команды
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emupdate/" title="emupdate - обновление торрентов" class="md-nav__link">
+      emupdate - обновление торрентов
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emfile/" title="emfile - просмотр информации о торрент-файле" class="md-nav__link">
+      emfile - просмотр информации о торрент-файле
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        emdiff - сравнение торрент-файлов
+      </label>
+    
+    <a href="./" title="emdiff - сравнение торрент-файлов" class="md-nav__link md-nav__link--active">
+      emdiff - сравнение торрент-файлов
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Описание" class="md-nav__link">
+    Описание
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Опции" class="md-nav__link">
+    Опции
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="Примеры использования" class="md-nav__link">
+    Примеры использования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="Замечания" class="md-nav__link">
+    Замечания
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emload/" title="emload - добавление торрента в клиент" class="md-nav__link">
+      emload - добавление торрента в клиент
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emrm/" title="emrm - удаление торрента из клиента" class="md-nav__link">
+      emrm - удаление торрента из клиента
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emfind/" title="emfind - запросы к клиенту для обслуживания коллекции" class="md-nav__link">
+      emfind - запросы к клиенту для обслуживания коллекции
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../hooks/" title="Спецкостыли для разных клиентов" class="md-nav__link">
+      Спецкостыли для разных клиентов
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Описание" class="md-nav__link">
+    Описание
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Опции" class="md-nav__link">
+    Опции
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="Примеры использования" class="md-nav__link">
+    Примеры использования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="Замечания" class="md-nav__link">
+    Замечания
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>emdiff - сравнение торрент-файлов</h1>
+                
+                <h3 id="_1">Описание<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><strong>emdiff</strong> - команда для сравнения содержимого двух торрентов по спискам предоставляемых ими файлов. Выводит список затронутых изменениями файлов во втором торренте по сравнению с первым. Сравнение файлов происходит поименно. Например:</p>
+<div class="codehilite"><pre><span></span>$ emdiff t1.torrent t2.torrent
+ + directory/file1
+ - directory/file2
+ ~ directory/changed_file
+ ? directory/changed_type
+</pre></div>
+
+
+<p>Ниже представлены расшифровки кодов:</p>
+<ul>
+<li><strong><code>+</code></strong> В торренте <code>t2</code> существует файл, которого нет в <code>t1</code>.</li>
+<li><strong><code>-</code></strong> В торренте <code>t2</code> нет файла, существующего в <code>t1</code>.</li>
+<li><strong><code>~</code></strong> В обоих торрентах найден указанный файл, однако его содержимое различно. <strong>Эта метка ненадежна, пожалуйста, внимательно прочитайте замечания внизу страницы!</strong></li>
+<li><strong><code>?</code></strong> Указанный путь имеет разный тип в торрентах. Например, в одном торренте этим именем назывался файл, а в другом торренте это каталог.</li>
+</ul>
+<hr />
+<h3 id="_2">Опции<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Кроме собственных опций, указанных ниже, <strong>emdiff</strong> поддерживает еще и общий стандартный набор (например, <code>--help</code> и <code>--config</code>). За подробностями обратитесь на страницу <a href="../config">config</a>.
+* <strong><code>-v, --verbose</code></strong>
+    * Включает отладочные сообщения, направляемые в stderr.</p>
+<hr />
+<h3 id="_3">Примеры использования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Чем различаются два файла в бекапах <a href="../emupdate">emupdate</a>?</p>
+<div class="codehilite"><pre><span></span>$ emdiff backup/attack_on_titan.torrent.1380475600.bak backup/attack_on_titan.torrent.1380873522.bak
+ + Shingeki no Kyojin <span class="o">[</span>KANSAI<span class="o">]</span>/<span class="o">[</span>KANSAI<span class="o">]</span> Shingeki no Kyojin - <span class="m">25</span> 1280x720.mp4
+</pre></div>
+
+
+<p>Чем отличается старый бекап от торрента, загруженного в клиенте?</p>
+<div class="codehilite"><pre><span></span>$ emdiff backup/attack_on_titan.torrent.1380475600.bak 8237951c7e1abdfbbefce7e7996ed792d8bf2c5d
+ + Shingeki no Kyojin <span class="o">[</span>KANSAI<span class="o">]</span>/<span class="o">[</span>KANSAI<span class="o">]</span> Shingeki no Kyojin - <span class="m">25</span> 1280x720.mp4
+ ~ Shingeki no Kyojin <span class="o">[</span>KANSAI<span class="o">]</span>/<span class="o">[</span>KANSAI<span class="o">]</span> Shingeki no Kyojin - <span class="m">23</span> 1280x720.mp4
+ ~ Shingeki no Kyojin <span class="o">[</span>KANSAI<span class="o">]</span>/<span class="o">[</span>KANSAI<span class="o">]</span> Shingeki no Kyojin - <span class="m">24</span> 1280x720.mp4
+</pre></div>
+
+
+<p>Если указан относительный путь к файлу, <strong>emdiff</strong> попытается найти его в каталоге, указанном параметром <code>core/torrents_dir</code> в конфигурации. Если указан хеш, то будет использован список файлов раздачи, взятый из клиента. Можно указывать два хеша, и тогда <strong>emdiff</strong> сравнит два списка файлов из клиента. Для использования этой возможности вы должны <a href="../config">настроить</a> <a href="../clients">интеграцию с клиентом</a> в <code>~/.config/emonoda.yaml</code>.</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">core</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">client</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rtorrent</span>
+</pre></div>
+
+
+<p>Подробнее об этом и о порядке поиска торрент-файлов смотрите на странице <a href="../config">config</a>.</p>
+<hr />
+<h3 id="_4">Замечания<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>В силу особенностей формата, нельзя точно определить, различается ли содержимое файлов, входящих в два торрента. Файлы представлены единым потоком байтов, который режется на чанки фиксированного размера. Торрент так же несет в себе индекс со смещениями в данных, обозначающие границы файлов в раздаче. Границы чанков не совпадают с границами файлов, более того, в один чанк может входить несколько файлов. При определении различий содержимого используется сравнение размеров - это единственная информация о файле, которая хранится в торренте. То есть, если два файла будут различаться по содержимому, но их размер совпадет с точностью до байта, то <strong>emdiff</strong> не увидит между ними разницы. Таким образом, если в диффе присутствует символ <code>~</code> - то указанные файлы различаются точно, однако его отсутствие не говорит о том, что файлы не менялись. С другой стороны, символы <code>+</code>, <code>-</code> и <code>?</code> являются надежными и вы можете на них полагаться.
+Некоторые клиенты записывают <a href="https://wiki.theory.org/BitTorrentSpecification#Info_Dictionary">поле</a> <code>md5sum</code> для каждого из файлов, но на практике таких раздач я не встречал.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../emfile/" title="emfile - просмотр информации о торрент-файле" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                emfile - просмотр информации о торрент-файле
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../emload/" title="emload - добавление торрента в клиент" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                emload - добавление торрента в клиент
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/mdevaev/emonoda" class="md-footer-social__link fa fa-github-alt"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application-0b7df094bf.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

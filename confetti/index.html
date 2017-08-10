@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://pythonhosted.org/emonoda/confetti/">
+      
+      
+      
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.4">
+    
+    
+      
+        <title>Настройка оповещений об обновлениях - emonoda! documentation</title>
+      
+    
+    
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-b1a1975878.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Hack">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Hack","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="https://pythonhosted.org/emonoda/" title="emonoda! documentation" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Базовая настройка
+                </span>
+              
+            
+            Настройка оповещений об обновлениях
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/mdevaev/emonoda" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      mdevaev/emonoda
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Emonoda -- 得物だ" class="md-tabs__link">
+        Emonoda -- 得物だ
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../clients/" title="Базовая настройка" class="md-tabs__link md-tabs__link--active">
+          Базовая настройка
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../emupdate/" title="Команды" class="md-tabs__link">
+          Команды
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    emonoda! documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/mdevaev/emonoda" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      mdevaev/emonoda
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Emonoda -- 得物だ" class="md-nav__link">
+      Emonoda -- 得物だ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="Базовая настройка" class="md-nav__link">
+      Базовая настройка
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Базовая настройка
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Базовая настройка
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../clients/" title="Интеграция с торрент-клиентом" class="md-nav__link">
+      Интеграция с торрент-клиентом
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trackers/" title="Настройка трекеров для обновления торрентов" class="md-nav__link">
+      Настройка трекеров для обновления торрентов
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Настройка оповещений об обновлениях
+      </label>
+    
+    <a href="./" title="Настройка оповещений об обновлениях" class="md-nav__link md-nav__link--active">
+      Настройка оповещений об обновлениях
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Настройка оповещений" class="md-nav__link">
+    Настройка оповещений
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Почта" class="md-nav__link">
+    Почта
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-android-nma" title="Push-нотификации на Android через NMA" class="md-nav__link">
+    Push-нотификации на Android через NMA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-iphoneandroid-pushover" title="Push-нотификации на iPhone/Android через Pushover" class="md-nav__link">
+    Push-нотификации на iPhone/Android через Pushover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atom" title="Лента Atom для использования на сервере" class="md-nav__link">
+    Лента Atom для использования на сервере
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Команды
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Команды
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emupdate/" title="emupdate - обновление торрентов" class="md-nav__link">
+      emupdate - обновление торрентов
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emfile/" title="emfile - просмотр информации о торрент-файле" class="md-nav__link">
+      emfile - просмотр информации о торрент-файле
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emdiff/" title="emdiff - сравнение торрент-файлов" class="md-nav__link">
+      emdiff - сравнение торрент-файлов
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emload/" title="emload - добавление торрента в клиент" class="md-nav__link">
+      emload - добавление торрента в клиент
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emrm/" title="emrm - удаление торрента из клиента" class="md-nav__link">
+      emrm - удаление торрента из клиента
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emfind/" title="emfind - запросы к клиенту для обслуживания коллекции" class="md-nav__link">
+      emfind - запросы к клиенту для обслуживания коллекции
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../hooks/" title="Спецкостыли для разных клиентов" class="md-nav__link">
+      Спецкостыли для разных клиентов
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Настройка оповещений" class="md-nav__link">
+    Настройка оповещений
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Почта" class="md-nav__link">
+    Почта
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-android-nma" title="Push-нотификации на Android через NMA" class="md-nav__link">
+    Push-нотификации на Android через NMA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-iphoneandroid-pushover" title="Push-нотификации на iPhone/Android через Pushover" class="md-nav__link">
+    Push-нотификации на iPhone/Android через Pushover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atom" title="Лента Atom для использования на сервере" class="md-nav__link">
+    Лента Atom для использования на сервере
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Настройка оповещений об обновлениях</h1>
+                
+                <h3 id="_1">Настройка оповещений<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>При обновлении торрентов <strong>emupdate</strong> умеет посылать оповещения. Для включения этой возможности вам нужно <a href="../config">настроить</a> соответствующие плагины в секции <code>confetti</code>. Ниже приведен пример для уведомлений по почте (через <a href="https://yandex.ru/support/mail/mail-clients.xml">внешний почтовый сервер</a>), с помощью <a href="http://www.notifymyandroid.com/">push-нотификаций на андроид</a>, а так же через <a href="https://pushover.net/">Pushover</a>:</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">confetti</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">email</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">to</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yarr@example.com</span>
+        <span class="l l-Scalar l-Scalar-Plain">server</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">smtp.yandex.ru</span>
+        <span class="l l-Scalar l-Scalar-Plain">ssl</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="l l-Scalar l-Scalar-Plain">user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">emonodaserver</span>
+        <span class="l l-Scalar l-Scalar-Plain">passwd</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">secretword</span>
+        <span class="l l-Scalar l-Scalar-Plain">sender</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">emonodaserver@yandex.ru</span>
+
+    <span class="l l-Scalar l-Scalar-Plain">nma</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">api_keys</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">hexkeyfromnotifymyandroid</span>
+</pre></div>
+
+
+<hr />
+<h3 id="_2">Почта<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Включается плагином <code>email</code>. По умолчанию плагин настроен на отправку почты через локальный SMTP-релей без SSL на <code>root@localhost</code>. Другие параметры со значениями по умолчанию перечислены ниже:</p>
+<ul>
+<li><strong><code>confetti/email/subject='{source} report: you have {affected} new torrents ^_^'</code></strong><ul>
+<li>Тема письма. В фигурных скобках указываются подставляемые параметры: <code>source</code> обозначает источник данных (сейчас это всегда <code>emupdate</code>), а <code>affected</code> показывает количество обновленных торрентов.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/to=[root@localhost]</code></strong><ul>
+<li>Адрес получателя (один или список) в <code>To</code>.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/cc=[]</code></strong><ul>
+<li>Кому отправить копию письма в <code>CC</code>.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/html=true</code></strong><ul>
+<li>Выбор вида письма. По умолчанию оно форматируется в HTML, иначе отправится в виде плейнтекста.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/sender=root@localhost</code></strong><ul>
+<li>Отправитель для поля <code>From</code>.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/server=localhost</code></strong><ul>
+<li>Адрес SMTP-сервера.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/port=0</code></strong><ul>
+<li>Порт подключения серверу. Значение по умолчанию определяется автоматически в зависимости от параметра <code>confetti/email/ssl</code>. Используется <code>25</code> порт для незащищенного соединения и <code>465</code> для SSL.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/ssl=false</code></strong><ul>
+<li>Использовать ли SSL для SMTP. Так же влияет на номер порта по умолчанию.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/user=null</code></strong><ul>
+<li>Имя пользователя для авторизации на сервере.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/passwd=null</code></strong><ul>
+<li>Пароль для авторизации на сервере.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/timeout=10.0</code></strong><ul>
+<li>Сетевой таймаут в секундах.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/retries=5</code></strong><ul>
+<li>Количество попыток повторной отправки емейлов в случае ошибки сети или сервера.</li>
+</ul>
+</li>
+<li><strong><code>confetti/email/retries_sleep=1.0</code></strong><ul>
+<li>Пауза в секундах между попытками отправки емейлов.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="push-android-nma">Push-нотификации на Android через NMA<a class="headerlink" href="#push-android-nma" title="Permanent link">&para;</a></h3>
+<p>Включаются плагином <code>nma</code>. Для отправки уведомлений используется сервис <a href="http://www.notifymyandroid.com">Notify My Android</a>. Вам нужно установить на телефон или планшет специальное <a href="https://play.google.com/store/apps/details?id=com.usk.app.notifymyandroid">приложение</a> и получить ключ для API. По этому ключу отправляется уведомление на ваш телефон. Плагину требуется указать как минимум один ключ.</p>
+<ul>
+<li><strong><code>confetti/nma/api_keys=[CHANGE_ME]</code></strong><ul>
+<li>Ключ для отправки уведомлений, один или несколько.</li>
+</ul>
+</li>
+<li><strong><code>confetti/nma/proxy_url=null</code></strong>
+    Прокси до сервиса. Поддерживаются HTTP(S)-прокси и SOCKS4/5. Этот параметр можно использовать так: <code>trackers/rutracker.org/proxy_url=socks5://localhost:5000</code> (вместе с <a href="https://ru.wikibooks.org/wiki/SSH_%D1%82%D1%83%D0%BD%D0%BD%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">SOCKS-проксированием по SSH</a>). Формат - <code>scheme://username:passwd@host:port</code>. Вместо <code>scheme</code> нужно указать <code>socks4</code>, <code>socks5</code>, <code>http</code> или <code>https</code>.</li>
+<li><strong><code>confetti/nma/timeout=10.0</code></strong><ul>
+<li>Сетевой таймаут в секундах.</li>
+</ul>
+</li>
+<li><strong><code>confetti/nma/retries=5</code></strong><ul>
+<li>Количество попыток повторной отправки оповещений в случае ошибки сети или сервера.</li>
+</ul>
+</li>
+<li><strong><code>confetti/nma/retries_sleep=1.0</code></strong><ul>
+<li>Пауза в секундах между попытками отправки оповещений.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="push-iphoneandroid-pushover">Push-нотификации на iPhone/Android через Pushover<a class="headerlink" href="#push-iphoneandroid-pushover" title="Permanent link">&para;</a></h3>
+<p>Включаются плагином <code>pushover</code>. Для отправки уведомлений используется <a href="https://pushover.net/">одноименный сервис</a>. Вам нужно установить на телефон или планшет специальное приложение (<a href="https://itunes.apple.com/ru/app/pushover-notifications/id506088175">iPhone</a>, <a href="https://play.google.com/store/apps/details?id=net.superblock.pushover">Android</a>), зарегистрировать Emonoda (по терминологии пушовера "приложение") <a href="https://pushover.net/apps/build">тут</a>, получить ключ для него и для юзера (на главной странице). По этим ключам отправляются уведомления на ваше устройство.
+Плагину требуется указать как минимум один ключ.</p>
+<ul>
+<li><strong><code>confetti/pushover/api_key=CHANGE_ME</code></strong><ul>
+<li>Ключ приложения.</li>
+</ul>
+</li>
+<li><strong><code>confetti/pushover/user_key=CHANGE_ME</code></strong><ul>
+<li>Ключ пользователя.</li>
+</ul>
+</li>
+<li><strong><code>confetti/pushover/devices=[]</code></strong><ul>
+<li>Список устройств пользователя, на которые нужно отправить оповещение. Пустой список - все устройства.</li>
+</ul>
+</li>
+<li><strong><code>confetti/pushover/proxy_url=null</code></strong>
+    Прокси до сервиса. Поддерживаются HTTP(S)-прокси и SOCKS4/5. Этот параметр можно использовать так: <code>trackers/rutracker.org/proxy_url=socks5://localhost:5000</code> (вместе с <a href="https://ru.wikibooks.org/wiki/SSH_%D1%82%D1%83%D0%BD%D0%BD%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">SOCKS-проксированием по SSH</a>). Формат - <code>scheme://username:passwd@host:port</code>. Вместо <code>scheme</code> нужно указать <code>socks4</code>, <code>socks5</code>, <code>http</code> или <code>https</code>.</li>
+<li><strong><code>confetti/pushover/timeout=10.0</code></strong><ul>
+<li>Сетевой таймаут в секундах.</li>
+</ul>
+</li>
+<li><strong><code>confetti/pushover/retries=5</code></strong><ul>
+<li>Количество попыток повторной отправки оповещений в случае ошибки сети или сервера.</li>
+</ul>
+</li>
+<li><strong><code>confetti/pushover/retries_sleep=1.0</code></strong><ul>
+<li>Пауза в секундах между попытками отправки оповещений.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="atom">Лента Atom для использования на сервере<a class="headerlink" href="#atom" title="Permanent link">&para;</a></h3>
+<p>Для полноценного использования этой опции необходимо, чтобы на компьютере, с которого запускается emonoda был запущен любой веб-сервер. Подойдёт, например, встроенный в Python простейший сервер: </p>
+<div class="codehilite"><pre><span></span>python -m http.server
+</pre></div>
+
+
+<p>Для более полноценной работы рекомендуется использовать полноценный сервер (nginx, lighttpd и т.д.). Его необходимо настроить так, чтобы он отдавал файл с лентой по адресу, который вы указываете в параметре <code>confetti/atom/url</code>. По умолчанию плагин хранит максимум 20 последних обновлений, на основе которых создаётся файл ленты. После создания файла ленты плагин назначит ему права 664, чтобы иметь дальнейшую возможность редактирования файла.</p>
+<ul>
+<li><strong><code>history_path</code></strong> <ul>
+<li>Имя файла с полным путём до файла, в котором хранится история обновлений.</li>
+</ul>
+</li>
+<li><strong><code>path</code></strong><ul>
+<li>Путь до места хранения ленты.</li>
+</ul>
+</li>
+<li><strong><code>url</code></strong><ul>
+<li>Полная ссылка на файл ленты в соответствии со ссылкой, по которой она будет доступна с сервера.</li>
+</ul>
+</li>
+<li><strong><code>user</code></strong><ul>
+<li>Пользователь, во владение которого плагин передаст ленту.</li>
+</ul>
+</li>
+<li><strong><code>group</code></strong><ul>
+<li>Группа пользователей, во владение которой плагин передаст ленту. Если пользователь, от имени которого запущена emonoda не состоит в этой группе, то плагин выдаст ошибку.</li>
+</ul>
+</li>
+<li><strong><code>template</code></strong><ul>
+<li>Шаблон для форматирования ленты. Если не указан, то используется встроенный.</li>
+</ul>
+</li>
+<li><strong><code>html</code></strong><ul>
+<li>Выбор вида заготовки для электнов ленты. По умолчанию они форматируется в HTML, иначе - в виде плейнтекста.</li>
+</ul>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../trackers/" title="Настройка трекеров для обновления торрентов" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Настройка трекеров для обновления торрентов
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../emupdate/" title="emupdate - обновление торрентов" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                emupdate - обновление торрентов
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/mdevaev/emonoda" class="md-footer-social__link fa fa-github-alt"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application-0b7df094bf.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
