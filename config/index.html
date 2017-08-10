@@ -94,15 +94,15 @@
   <div class="md-search__overlay"></div>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" required placeholder="Поиск" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
-            Type to start searching
+          <div class="md-search-result__meta" data-md-lang-result-none="Нет совпадений" data-md-lang-result-one="Совпадений: 1" data-md-lang-result-other="Совпадений: #">
+            Начните писать для начала поиска
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -121,7 +121,7 @@
   
 
 
-  <a href="https://github.com/mdevaev/emonoda" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/mdevaev/emonoda" title="Перейти к исходному коду" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -166,7 +166,7 @@
   
 
 
-  <a href="https://github.com/mdevaev/emonoda" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/mdevaev/emonoda" title="Перейти к исходному коду" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -241,7 +241,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="toc">Содержание</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -438,7 +438,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="toc">Содержание</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -511,7 +511,8 @@
 </pre></div>
 
 
-<p>Для обозначения подобных вложенных параметров в этой документации часто будет использоваться такая запись: <code>core/client=rtorrent</code> или <code>trackers/rutor.org/timeout=5.0</code>. Этот же синтаксис используется для передачи значения параметров в опцию <code>-o/--set-options</code>: <code>--set-options core/client=rtorrent trackers/rutor.org/timeout=5</code>. Через знак равенства указываются значения по умолчанию; <code>null</code>, <code>[]</code> или <code>{}</code> обозначают отключенную функцию.</p>
+<p>Для обозначения подобных вложенных параметров в этой документации часто будет использоваться такая запись: <code>core/client=rtorrent</code> или <code>trackers/rutor.org/timeout=5.0</code>.</p>
+<p>Этот же синтаксис используется для передачи значения параметров в опцию <code>-o/--set-options</code>: <code>--set-options core/client=rtorrent trackers/rutor.org/timeout=5</code>. Через знак равенства указываются значения по умолчанию; <code>null</code>, <code>[]</code> или <code>{}</code> обозначают отключенную функцию.</p>
 <hr />
 <h3 id="_3">Основные параметры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>Команды <a href="../emfile">emfile</a> и <a href="../emdiff">emdiff</a> могут работать с конфигурацией по умолчанию, однако для всех остальных утилит вам потребуется настроить <a href="../clients">интеграцию с клиентом</a>, а также указать пути к каталогам с торрент-файлами и данными.<br />
@@ -536,20 +537,34 @@
 </pre></div>
 
 
-<p>Полный список всех секций и параметров (в том числе и для выбранных плагинов) вы всегда можете посмотреть с помощью команды <code>emfile -m</code>. Параметры секции <code>core</code> и <code>client</code> действуют на все программы.
-<em> <strong><code>core/client=null</code></strong>
-    * Плагин используемого <a href="../clients">клиента</a>.
-</em> <strong><code>core/torrents_dir=.</code></strong>
-    * Путь к каталогу, где лежат торрент-файлы.
-<em> <strong><code>core/use_colors=true</code></strong>
-    * Параметр разрешает использование цветов при выводе на терминал.
-</em> <strong><code>core/force_colors=false</code></strong>
-    * При использовании <code>core/use_colors</code> программа будет раскрашивать свой вывод, если он направлен в терминал. При перенаправлении в файл раскрашивание отключается, однако при <code>core/force_colors=true</code> вывод будет раскрашиваться всегда.
-<em> <strong><code>core/data_root_dir=~/Downloads</code></strong>
-    * Корневой каталог с данными торрентов. В его подкаталоги <a href="../emload">emload</a> загружает новые данные, а <a href="../emfind">emfind</a> индексирует его содержимое.
-    * Корневой каталог, в который должны загружаться данные торрентов. Используется <a href="../emload">emload</a> и <a href="../emfind">emfind</a>.
-</em> <strong><code>core/another_data_root_dirs=[]</code></strong>
-    * Дополнительный список каталогов, где находятся уже загруженные ранее торренты. Этот параметр полезен, если до установки <strong>Emonoda</strong> и использования <a href="../emload">emload</a> данные качались по разным путям. Он добавляет указанные каталоги для поиска с помощью <a href="../emfind">emfind</a>.</p>
+<p>Полный список всех секций и параметров (в том числе и для выбранных плагинов) вы всегда можете посмотреть с помощью команды <code>emfile -m</code>. Параметры секции <code>core</code> и <code>client</code> действуют на все программы.</p>
+<ul>
+<li><strong><code>core/client=null</code></strong><ul>
+<li>Плагин используемого <a href="../clients">клиента</a>.</li>
+</ul>
+</li>
+<li><strong><code>core/torrents_dir=.</code></strong><ul>
+<li>Путь к каталогу, где лежат торрент-файлы.</li>
+</ul>
+</li>
+<li><strong><code>core/use_colors=true</code></strong><ul>
+<li>Параметр разрешает использование цветов при выводе на терминал.</li>
+</ul>
+</li>
+<li><strong><code>core/force_colors=false</code></strong><ul>
+<li>При использовании <code>core/use_colors</code> программа будет раскрашивать свой вывод, если он направлен в терминал. При перенаправлении в файл раскрашивание отключается, однако при <code>core/force_colors=true</code> вывод будет раскрашиваться всегда.</li>
+</ul>
+</li>
+<li><strong><code>core/data_root_dir=~/Downloads</code></strong><ul>
+<li>Корневой каталог с данными торрентов. В его подкаталоги <a href="../emload">emload</a> загружает новые данные, а <a href="../emfind">emfind</a> индексирует его содержимое.</li>
+<li>Корневой каталог, в который должны загружаться данные торрентов. Используется <a href="../emload">emload</a> и <a href="../emfind">emfind</a>.</li>
+</ul>
+</li>
+<li><strong><code>core/another_data_root_dirs=[]</code></strong><ul>
+<li>Дополнительный список каталогов, где находятся уже загруженные ранее торренты. Этот параметр полезен, если до установки <strong>Emonoda</strong> и использования <a href="../emload">emload</a> данные качались по разным путям. Он добавляет указанные каталоги для поиска с помощью <a href="../emfind">emfind</a>.</li>
+</ul>
+</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -617,7 +632,7 @@
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  Previous
+                  Предыдущая страница
                 </span>
                 Emonoda -- 得物だ
               </span>
@@ -629,7 +644,7 @@
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  Следующая страница
                 </span>
                 Интеграция с торрент-клиентом
               </span>
