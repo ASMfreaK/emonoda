@@ -22,6 +22,7 @@ depends=(
 optdepends=(
 	"python-transmissionrpc: Transmission support"
 	"python-dbus: KTorrent support"
+	"python-matrix-nio: Matrix notification support"
 )
 makedepends=("python-setuptools" "cython" "wget")
 source=(
